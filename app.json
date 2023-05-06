@@ -2,6 +2,7 @@
   "expo": {
     "name": "logistics",
     "slug": "logistics",
+    "plugins": ["@react-native-google-signin/google-signin"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,12 +16,25 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.logistics.app",
+      "config": {
+        "usesNonExemptEncryption": false,
+        "googleMapsApiKey":"AIzaSyCNks92BA3D5Ogc1Nz6Jg8fnuhjtdvlCQs"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+
+      "package": "com.logistics.app",
+      "config": {
+        "googleMaps":{
+          "apiKey":"AIzaSyCNks92BA3D5Ogc1Nz6Jg8fnuhjtdvlCQs"
+        },
+        "permissions":["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION","FOREGROUND_SERVICES"]
       }
     },
     "web": {
